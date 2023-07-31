@@ -1,0 +1,31 @@
+# MTP model parameters
+args_mtp:
+  backbone: 'resnet50'
+
+
+# Dataset and dataloader parameters
+ds: 'ns'
+dataroot: 'E:\\NuScenes\\trainval\\data\\sets\\nuscenes'  # Add NuScenes data root here
+dataroot_t: 'E:\\NuScenes\\trainval\\data\\sets\\nuscenes'
+# dataroot: 'E:\\NuScenes\\mini\\data\\sets\\nuscenes'
+train: "train" # 32186
+# train: "mini_train" # 742
+# val: "train_val" # 8569
+val: "mini_val" # 61
+test: "mini_test" # 71
+# test: "val" # 9041
+# t_f: 6
+num_workers: 0
+pred_output_dir: 'E:/NuScenes/trainval/data/sets/nuscenes/mini_output_230720_1'
+
+# Optimizer and training parameters for MTP model
+opt_mtp:
+  batch_size: 4 # 16 # 8 # 4 # 32
+  lr: 0.0001
+  num_epochs: 10 # 25 # P2T:25,
+  steps_to_log_train_loss: 100
+  save_checkpoints: true
+  checkpt_dir: 'C:/Users/NGN/dev/NTPN/checkpts/ns/loss/weights/mini'
+  log_dir: 'checkpts/ns/loss/log'
+  load_checkpt: false
+  checkpt_path: ''
